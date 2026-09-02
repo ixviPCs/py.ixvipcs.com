@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Reset</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        #message {
+            display: none;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <button id="resetButton" onclick="resetPassword()">
+            Reset Password
+        </button>
+
+        <p id="message">Password reset</p>
+    </div>
+
+    <script>
+        function resetPassword() {
+            const button = document.getElementById("resetButton");
+            const message = document.getElementById("message");
+
+            button.style.display = "none";
+            message.style.display = "block";
+
+            setTimeout(() => {
+                message.style.display = "none";
+                button.style.display = "block";
+            }, 3000);
+        }
+    </script>
+
+</body>
+</html>
