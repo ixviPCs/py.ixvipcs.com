@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Download App</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, sans-serif;
+    }
+
+    button {
+        padding: 12px 24px;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    #message {
+        display: none;
+        font-size: 20px;
+    }
+</style>
+
+</head>
+
+<body>
+
+<div>
+    <button id="downloadButton" onclick="downloadApp()">
+        Download App
+    </button>
+
+    <p id="message">Downloading...</p>
+</div>
+
+<script>
+    function downloadApp() {
+        const button = document.getElementById("downloadButton");
+        const message = document.getElementById("message");
+
+        button.style.display = "none";
+        message.style.display = "block";
+
+        const link = document.createElement("a");
+        link.href = "App.exe";
+        link.download = "App.exe";
+        link.click();
+
+        setTimeout(() => {
+            message.style.display = "none";
+            button.style.display = "block";
+        }, 3000);
+    }
+</script>
+
+</body>
+</html>
